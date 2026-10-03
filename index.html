@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecionando para o WhatsApp...</title>
+
+  <!-- Fallback sem JavaScript -->
+  <meta http-equiv="refresh" content="6;url=https://wa.me/5537999113858?text=Ol%C3%A1!%20tenho%20interesse" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fale com a gente no WhatsApp" />
+  <meta property="og:description" content="Você será direcionado para o nosso atendimento no WhatsApp" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" />
+  <meta property="og:url" content="https://wa.me/5537999113858" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fale com a gente no WhatsApp" />
+  <meta name="twitter:description" content="Você será direcionado para o nosso atendimento no WhatsApp" />
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" />
+
+  <style>
+    body {
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 { font-size: 18px; margin-bottom: 20px; }
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #444;
+      border-top: 5px solid #00ff00;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    p { font-size: 14px; margin-top: 15px; opacity: 0.8; }
+    .handle { font-size: 15px; color: #25d366; margin-top: 6px; font-weight: bold; }
+  </style>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1059746396814128');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1059746396814128&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <script>
+    window.onload = function () {
+      setTimeout(function () {
+        if (typeof fbq === 'function') { fbq('track', 'ViewContent'); }
+        setTimeout(function () {
+          if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+
+          var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+          var phone = "5537999113858";
+          var message = "Olá! tenho interesse";
+          var webUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+          if (/android/i.test(userAgent)) {
+            // Android: tenta deep link via iframe
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = "whatsapp://send?phone=" + phone + "&text=" + encodeURIComponent(message);
+            document.body.appendChild(iframe);
+            setTimeout(function () {
+              window.location.replace(webUrl);
+            }, 1500);
+
+          } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // iOS: Universal Link — iOS intercepta e abre no app automaticamente
+            window.location.replace(webUrl);
+
+          } else {
+            // Desktop ou outros
+            window.location.replace(webUrl);
+          }
+
+        }, 300);
+      }, 3200);
+    };
+  </script>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Aguarde, estamos te direcionando…</h1>
+    <div class="loader"></div>
+    <p>Você será levado ao nosso atendimento no WhatsApp</p>
+    <span class="handle">WhatsApp</span>
+  </div>
+</body>
+</html>
