@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecionando para o Instagram...</title>
+  <title>Redirecionando para o WhatsApp...</title>
 
   <!-- Fallback sem JavaScript -->
-  <meta http-equiv="refresh" content="6;url=https://www.instagram.com/phaellacosta7/" />
+  <meta http-equiv="refresh" content="6;url=https://wa.me/5537999113858?text=Ol%C3%A1!%20tenho%20interesse" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="@phaellacosta7 no Instagram" />
-  <meta property="og:description" content="Acesse o perfil oficial no Instagram de @phaellacosta7" />
-  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" />
-  <meta property="og:url" content="https://www.instagram.com/phaellacosta7/" />
+  <meta property="og:title" content="Fale com a gente no WhatsApp" />
+  <meta property="og:description" content="Você será direcionado para o nosso atendimento no WhatsApp" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" />
+  <meta property="og:url" content="https://wa.me/5537999113858" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="@phaellacosta7 no Instagram" />
-  <meta name="twitter:description" content="Acesse o perfil oficial no Instagram de @phaellacosta7" />
-  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" />
+  <meta name="twitter:title" content="Fale com a gente no WhatsApp" />
+  <meta name="twitter:description" content="Você será direcionado para o nosso atendimento no WhatsApp" />
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png" />
 
   <style>
     body {
@@ -53,7 +53,7 @@
       to { transform: rotate(360deg); }
     }
     p { font-size: 14px; margin-top: 15px; opacity: 0.8; }
-    .handle { font-size: 15px; color: #c13584; margin-top: 6px; font-weight: bold; }
+    .handle { font-size: 15px; color: #25d366; margin-top: 6px; font-weight: bold; }
   </style>
 
   <!-- Facebook Pixel -->
@@ -66,12 +66,12 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1900486574673194');
+    fbq('init', '1059746396814128');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1900486574673194&ev=PageView&noscript=1"/>
+    src="https://www.facebook.com/tr?id=1059746396814128&ev=PageView&noscript=1"/>
   </noscript>
 
   <script>
@@ -82,25 +82,27 @@
           if (typeof fbq === 'function') { fbq('track', 'Lead'); }
 
           var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-          var username = "phaellacosta7";
+          var phone = "5537999113858";
+          var message = "Olá! tenho interesse";
+          var webUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
           if (/android/i.test(userAgent)) {
             // Android: tenta deep link via iframe
             var iframe = document.createElement("iframe");
             iframe.style.display = "none";
-            iframe.src = "instagram://user?username=" + username;
+            iframe.src = "whatsapp://send?phone=" + phone + "&text=" + encodeURIComponent(message);
             document.body.appendChild(iframe);
             setTimeout(function () {
-              window.location.replace("https://www.instagram.com/" + username + "/");
+              window.location.replace(webUrl);
             }, 1500);
 
           } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             // iOS: Universal Link — iOS intercepta e abre no app automaticamente
-            window.location.replace("https://www.instagram.com/" + username + "/");
+            window.location.replace(webUrl);
 
           } else {
             // Desktop ou outros
-            window.location.replace("https://www.instagram.com/" + username + "/");
+            window.location.replace(webUrl);
           }
 
         }, 300);
@@ -113,8 +115,8 @@
   <div class="container">
     <h1>Aguarde, estamos te direcionando…</h1>
     <div class="loader"></div>
-    <p>Você será levado ao perfil oficial no Instagram</p>
-    <span class="handle">@phaellacosta7</span>
+    <p>Você será levado ao nosso atendimento no WhatsApp</p>
+    <span class="handle">WhatsApp</span>
   </div>
 </body>
 </html>
